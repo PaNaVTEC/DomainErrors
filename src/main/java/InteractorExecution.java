@@ -56,7 +56,7 @@ public class InteractorExecution<T extends InteractorResponse> {
     return invoker.execute(this);
   }
 
-  public InteractorErrorAction<? extends InteractorError> getGenericError() {
+  public InteractorErrorAction<? extends InteractorError> getGenericErrorAction() {
     return errorActions.get(InteractorError.class);
   }
 }
