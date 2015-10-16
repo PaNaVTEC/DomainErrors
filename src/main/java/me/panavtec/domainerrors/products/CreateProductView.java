@@ -1,7 +1,5 @@
 package me.panavtec.domainerrors.products;
 
-import me.panavtec.domainerrors.Product;
-
 public interface CreateProductView {
   void showNotLogged();
 

@@ -1,13 +1,11 @@
 package me.panavtec.domainerrors.products;
 
-import me.panavtec.domainerrors.GenericErrorAction;
-import me.panavtec.domainerrors.InteractorExecution;
-import me.panavtec.domainerrors.InteractorInvoker;
-import me.panavtec.domainerrors.InteractorResult;
-import me.panavtec.domainerrors.InvalidCreateProductFieldError;
-import me.panavtec.domainerrors.NotLoggedError;
-import me.panavtec.domainerrors.NotLoggedErrorAction;
-import me.panavtec.domainerrors.ValidateErrorAction;
+import me.panavtec.domainerrors.interactors.GenericErrorAction;
+import me.panavtec.domainerrors.interactors.InteractorExecution;
+import me.panavtec.domainerrors.interactors.InteractorInvoker;
+import me.panavtec.domainerrors.interactors.InteractorResult;
+import me.panavtec.domainerrors.users.NotLoggedError;
+import me.panavtec.domainerrors.users.NotLoggedErrorAction;
 
 public class CreateProductPresenter {
   private final CreateProductView view;

@@ -1,8 +1,6 @@
 package me.panavtec.domainerrors.products;
 
 import me.panavtec.domainerrors.interactors.InteractorErrorAction;
-import me.panavtec.domainerrors.products.CreateProductView;
-import me.panavtec.domainerrors.products.InvalidCreateProductFieldError;
 
 public class ValidateErrorAction implements InteractorErrorAction<InvalidCreateProductFieldError> {
   private final CreateProductView view;
@@ -12,10 +10,10 @@ public class ValidateErrorAction implements InteractorErrorAction<InvalidCreateP
   }
 
   @Override public void onError(InvalidCreateProductFieldError error) {
-    if (error.errors == InvalidCreateProductFieldError.Errors.INVALID_PRICE) {
+    if (error.getCreateProductErrors() == CreateProductErrors.INVALID_PRICE) {
       view.showInvalidPrice();
     }
-    if (error.errors == InvalidCreateProductFieldError.Errors.INVALID_TITLE) {
+    if (error.getCreateProductErrors() == CreateProductErrors.INVALID_TITLE) {
       view.showInvalidTitle();
     }
   }

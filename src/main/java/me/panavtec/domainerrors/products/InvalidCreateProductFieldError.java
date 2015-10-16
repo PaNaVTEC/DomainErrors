@@ -4,14 +4,13 @@ import me.panavtec.domainerrors.interactors.InteractorError;
 
 public class InvalidCreateProductFieldError implements InteractorError {
 
-  public void setErrors(Errors errors) {
-    this.errors = errors;
+  private CreateProductErrors createProductErrors;
+
+  public void setCreateProductErrors(CreateProductErrors createProductErrors) {
+    this.createProductErrors = createProductErrors;
   }
 
-  Errors errors;
-
-  enum Errors {
-    INVALID_TITLE,
-    INVALID_PRICE
+  public CreateProductErrors getCreateProductErrors() {
+    return createProductErrors;
   }
 }

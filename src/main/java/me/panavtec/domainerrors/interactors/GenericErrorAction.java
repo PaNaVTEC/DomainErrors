@@ -1,7 +1,5 @@
 package me.panavtec.domainerrors.interactors;
 
-import me.panavtec.domainerrors.interactors.InteractorError;
-import me.panavtec.domainerrors.interactors.InteractorErrorAction;
 import me.panavtec.domainerrors.products.CreateProductView;
 
 public class GenericErrorAction implements InteractorErrorAction<InteractorError> {

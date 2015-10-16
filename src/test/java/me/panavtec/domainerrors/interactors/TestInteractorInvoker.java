@@ -1,13 +1,6 @@
 package me.panavtec.domainerrors.interactors;
 
 import java.util.concurrent.Future;
-import me.panavtec.domainerrors.interactors.GenericInteractorError;
-import me.panavtec.domainerrors.interactors.InteractorError;
-import me.panavtec.domainerrors.interactors.InteractorErrorAction;
-import me.panavtec.domainerrors.interactors.InteractorExecution;
-import me.panavtec.domainerrors.interactors.InteractorInvoker;
-import me.panavtec.domainerrors.interactors.InteractorResponse;
-import me.panavtec.domainerrors.interactors.InteractorResult;
 
 public class TestInteractorInvoker implements InteractorInvoker {
 
