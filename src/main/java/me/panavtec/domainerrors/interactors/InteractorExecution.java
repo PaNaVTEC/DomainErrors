@@ -1,3 +1,5 @@
+package me.panavtec.domainerrors.interactors;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Future;

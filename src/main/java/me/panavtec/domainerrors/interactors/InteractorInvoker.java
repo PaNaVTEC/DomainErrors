@@ -1,3 +1,5 @@
+package me.panavtec.domainerrors.interactors;
+
 import java.util.concurrent.Future;
 
 public interface InteractorInvoker {

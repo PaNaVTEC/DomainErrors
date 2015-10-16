@@ -1,4 +1,13 @@
+package me.panavtec.domainerrors.interactors;
+
 import java.util.concurrent.Future;
+import me.panavtec.domainerrors.interactors.GenericInteractorError;
+import me.panavtec.domainerrors.interactors.InteractorError;
+import me.panavtec.domainerrors.interactors.InteractorErrorAction;
+import me.panavtec.domainerrors.interactors.InteractorExecution;
+import me.panavtec.domainerrors.interactors.InteractorInvoker;
+import me.panavtec.domainerrors.interactors.InteractorResponse;
+import me.panavtec.domainerrors.interactors.InteractorResult;
 
 public class TestInteractorInvoker implements InteractorInvoker {
 
@@ -13,7 +22,7 @@ public class TestInteractorInvoker implements InteractorInvoker {
         interactorResult.onResult(response);
       }
     } catch (Exception e) {
-      executeErrorAction(execution, new GenericError(e));
+      executeErrorAction(execution, new GenericInteractorError(e));
     }
     return null;
   }
@@ -25,15 +34,15 @@ public class TestInteractorInvoker implements InteractorInvoker {
     if (errorAction != null) {
       errorAction.onError(error);
     } else {
-      executeErrorAction(execution, new GenericError());
+      executeErrorAction(execution, new GenericInteractorError());
     }
   }
 
   private <T extends InteractorResponse> void executeErrorAction(InteractorExecution<T> execution,
-      GenericError genericError) {
+      GenericInteractorError genericInteractorError) {
     InteractorErrorAction genericErrorAction = execution.getGenericErrorAction();
     if (genericErrorAction != null) {
-      genericErrorAction.onError(genericError);
+      genericErrorAction.onError(genericInteractorError);
     }
   }
 }

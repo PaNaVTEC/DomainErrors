@@ -1,3 +1,11 @@
+package me.panavtec.domainerrors.products;
+
+import me.panavtec.domainerrors.InvalidCreateProductFieldError;
+import me.panavtec.domainerrors.LoginService;
+import me.panavtec.domainerrors.NotLoggedError;
+import me.panavtec.domainerrors.ValidatorService;
+import me.panavtec.domainerrors.interactors.Interactor;
+
 public class CreateProductInteractor implements Interactor<CreateProductResponse> {
   private final LoginService loginService;
   private final ValidatorService productValidator;

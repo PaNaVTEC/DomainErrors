@@ -1,3 +1,9 @@
+package me.panavtec.domainerrors.products;
+
+import me.panavtec.domainerrors.interactors.InteractorErrorAction;
+import me.panavtec.domainerrors.products.CreateProductView;
+import me.panavtec.domainerrors.products.InvalidCreateProductFieldError;
+
 public class ValidateErrorAction implements InteractorErrorAction<InvalidCreateProductFieldError> {
   private final CreateProductView view;
 

@@ -1,3 +1,7 @@
+package me.panavtec.domainerrors.interactors;
+
+import me.panavtec.domainerrors.interactors.InteractorError;
+
 public class InteractorResponse<T> {
   private T response;
   private InteractorError error;

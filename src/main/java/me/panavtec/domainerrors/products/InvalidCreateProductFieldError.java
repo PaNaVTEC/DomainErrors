@@ -1,3 +1,7 @@
+package me.panavtec.domainerrors.products;
+
+import me.panavtec.domainerrors.interactors.InteractorError;
+
 public class InvalidCreateProductFieldError implements InteractorError {
 
   public void setErrors(Errors errors) {

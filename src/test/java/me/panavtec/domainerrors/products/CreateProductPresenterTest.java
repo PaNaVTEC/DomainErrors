@@ -1,3 +1,7 @@
+package me.panavtec.domainerrors.products;
+
+import me.panavtec.domainerrors.interactors.InteractorInvoker;
+import me.panavtec.domainerrors.users.LoginService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -18,27 +22,30 @@ public class CreateProductPresenterTest {
 
   @Test public void whenInputIsValid_onResultIsCalled() {
     LoginService loginService = new LoginService();
-    ValidatorService validatorService = new ValidatorService();
+    ProductValidatorService productValidatorService = new ProductValidatorService();
     CreateProductPresenter presenter = Mockito.spy(
-        new CreateProductPresenter(view, new CreateProductInteractor(loginService, validatorService), invoker));
+        new CreateProductPresenter(view, new CreateProductInteractor(loginService,
+            productValidatorService), invoker));
     presenter.onCreateProduct();
     Mockito.verify(view).showCreatedProduct(any(Product.class));
   }
 
   @Test public void whenUserIsNotLoggedIn_onErrorIsCalledWithLoginError() {
     LoginService loginService = new LoginServiceErrorFake();
-    ValidatorService validatorService = new ValidatorService();
+    ProductValidatorService productValidatorService = new ProductValidatorService();
     CreateProductPresenter presenter = Mockito.spy(
-        new CreateProductPresenter(view, new CreateProductInteractor(loginService, validatorService), invoker));
+        new CreateProductPresenter(view, new CreateProductInteractor(loginService,
+            productValidatorService), invoker));
     presenter.onCreateProduct();
     Mockito.verify(view).showNotLogged();
   }
 
   @Test public void whenUserCreatesProductWithInvalidOutput_onInputInvalidErrorIsCalled() {
     LoginService loginService = new LoginService();
-    ValidatorService validatorService = new ValidatorInvalidPriceErrorFake();
+    ProductValidatorService productValidatorService = new ProductValidatorInvalidPriceErrorFake();
     CreateProductPresenter presenter = Mockito.spy(
-        new CreateProductPresenter(view, new CreateProductInteractor(loginService, validatorService), invoker));
+        new CreateProductPresenter(view, new CreateProductInteractor(loginService,
+            productValidatorService), invoker));
     presenter.onCreateProduct();
     Mockito.verify(view).showInvalidPrice();
   }

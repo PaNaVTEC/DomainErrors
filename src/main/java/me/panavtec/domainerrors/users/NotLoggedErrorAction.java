@@ -1,3 +1,8 @@
+package me.panavtec.domainerrors.users;
+
+import me.panavtec.domainerrors.interactors.InteractorErrorAction;
+import me.panavtec.domainerrors.products.CreateProductView;
+
 public class NotLoggedErrorAction implements InteractorErrorAction<NotLoggedError> {
   private final CreateProductView view;
 
